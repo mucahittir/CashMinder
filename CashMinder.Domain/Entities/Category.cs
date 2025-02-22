@@ -12,6 +12,9 @@ namespace CashMinder.Domain.Entities
         public required string Name { get; set; }
         public required Guid UserId { get; set; }
         public User User { get; set; }
+
+        public IEnumerable<Transaction> Transactions { get; set; }
+        public IEnumerable<RecurringTransaction> RecurringTransactions { get; set; }
         public Category(string name, Guid userId)
         {
             Name = name;

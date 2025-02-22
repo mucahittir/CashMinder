@@ -22,5 +22,17 @@ namespace CashMinder.Domain.Entities
         public Category Category { get; set; }
         public required Guid AccountId { get; set; }
         public Account Account { get; set; }
+
+        public RecurringTransaction(string description, float amount, DateTime startDate, TransactionFrequency frequency, TransactionType type, Guid userId, Guid categoryId, Guid accountId)
+        {
+            Description = description;
+            Amount = amount;
+            StartDate = startDate;
+            Frequency = frequency;
+            Type = type;
+            UserId = userId;
+            CategoryId = categoryId;
+            AccountId = accountId;
+        }
     }
 }

@@ -15,6 +15,11 @@ namespace CashMinder.Domain.Entities
         public required string Email { get; set; }
         public required string PasswordHash { get; set; }
 
+        public IEnumerable<Account> Accounts { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
+        public IEnumerable<Transaction> Transactions { get; set; }
+        public IEnumerable<RecurringTransaction> RecurringTransactions { get; set; }
+
         public User(string username, string firstName, string lastName, string email, string passwordHash)
         {
             Username = username;
