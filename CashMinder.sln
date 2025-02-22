@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashMinder.Application", "CashMinder.Application\CashMinder.Application.csproj", "{973B9DD6-1C9E-4893-BCFB-8E029DB22FE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashMinder.Domain", "CashMinder.Domain\CashMinder.Domain.csproj", "{4091608B-0EA0-419D-933F-C90E7F55C42E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashMinder.Infrastructure", "CashMinder.Infrastructure\CashMinder.Infrastructure.csproj", "{AFBAC8D2-3973-4509-9EC0-262278548246}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashMinder.Persistence", "CashMinder.Persistence\CashMinder.Persistence.csproj", "{8E06F1DB-77BB-48F2-9E47-3BD4495E6555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashMinder.API", "CashMinder.API\CashMinder.API.csproj", "{31EB0490-50BB-4111-A2AC-9A503E3152FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{973B9DD6-1C9E-4893-BCFB-8E029DB22FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973B9DD6-1C9E-4893-BCFB-8E029DB22FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973B9DD6-1C9E-4893-BCFB-8E029DB22FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973B9DD6-1C9E-4893-BCFB-8E029DB22FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4091608B-0EA0-419D-933F-C90E7F55C42E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4091608B-0EA0-419D-933F-C90E7F55C42E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4091608B-0EA0-419D-933F-C90E7F55C42E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4091608B-0EA0-419D-933F-C90E7F55C42E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFBAC8D2-3973-4509-9EC0-262278548246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFBAC8D2-3973-4509-9EC0-262278548246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFBAC8D2-3973-4509-9EC0-262278548246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFBAC8D2-3973-4509-9EC0-262278548246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E06F1DB-77BB-48F2-9E47-3BD4495E6555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E06F1DB-77BB-48F2-9E47-3BD4495E6555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E06F1DB-77BB-48F2-9E47-3BD4495E6555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E06F1DB-77BB-48F2-9E47-3BD4495E6555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31EB0490-50BB-4111-A2AC-9A503E3152FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31EB0490-50BB-4111-A2AC-9A503E3152FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31EB0490-50BB-4111-A2AC-9A503E3152FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31EB0490-50BB-4111-A2AC-9A503E3152FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
