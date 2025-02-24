@@ -16,6 +16,7 @@ namespace CashMinder.Persistence
             });
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
+            services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
         }
     }
 }

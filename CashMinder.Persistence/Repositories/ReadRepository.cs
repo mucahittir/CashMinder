@@ -8,7 +8,7 @@ namespace CashMinder.Persistence.Repositories
     public class ReadRepository<T> : IReadRepository<T> where T : class, IEntityBase, new()
     {
         private readonly DbContext dbContext;
-        private DbSet<T> entities => dbContext.Set<T>();
+        private DbSet<T> Table => dbContext.Set<T>();
         public ReadRepository(DbContext dbContext)
         {
             this.dbContext = dbContext;
@@ -20,7 +20,7 @@ namespace CashMinder.Persistence.Repositories
                                                Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
                                                bool enableTracking = false)
         {
-            IQueryable<T> queryable = entities;
+            IQueryable<T> queryable = Table;
 
             if(!enableTracking) queryable = queryable.AsNoTracking();
             if(include != null) queryable = include(queryable);
@@ -37,7 +37,7 @@ namespace CashMinder.Persistence.Repositories
                                                  int currentPage = 1,
                                                  int pageSize = 10)
         {
-            IQueryable<T> queryable = entities;
+            IQueryable<T> queryable = Table;
 
             if (!enableTracking) queryable = queryable.AsNoTracking();
             if (include != null) queryable = include(queryable);
@@ -50,7 +50,7 @@ namespace CashMinder.Persistence.Repositories
 
         public async Task<T?> GetAsync(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null, bool enableTracking = false)
         {
-            IQueryable<T> queryable = entities;
+            IQueryable<T> queryable = Table;
 
             if (!enableTracking) queryable = queryable.AsNoTracking();
             if (include != null) queryable = include(queryable);
@@ -59,18 +59,18 @@ namespace CashMinder.Persistence.Repositories
 
         public async Task<int> CountAsync(Expression<Func<T, bool>>? predicate)
         {
-            entities.AsNoTracking();
+            Table.AsNoTracking();
             if(predicate != null)
-                return await entities.CountAsync(predicate);
-            return await entities.CountAsync();
+                return await Table.CountAsync(predicate);
+            return await Table.CountAsync();
         }
 
         public IQueryable<T> Find(Expression<Func<T, bool>> predicate, bool enableTracking)
         {
             if (enableTracking)
-                entities.AsNoTracking();
+                Table.AsNoTracking();
 
-            return entities.Where(predicate);
+            return Table.Where(predicate);
         }
 
 

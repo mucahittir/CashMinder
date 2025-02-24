@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CashMinder.Application\CashMinder.Application.csproj" />
     <ProjectReference Include="..\CashMinder.Domain\CashMinder.Domain.csproj" />
   </ItemGroup>
 
