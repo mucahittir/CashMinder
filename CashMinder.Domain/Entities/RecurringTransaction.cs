@@ -10,17 +10,17 @@ namespace CashMinder.Domain.Entities
 {
     public class RecurringTransaction : EntityBase
     {
-        public required string Description { get; set; }
-        public required float Amount { get; set; }
-        public required DateTime StartDate { get; set; } = DateTime.Now;
-        public required TransactionFrequency Frequency { get; set; }
-        public required TransactionType Type { get; set; }
+        public string Description { get; set; }
+        public float Amount { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Now;
+        public TransactionFrequency Frequency { get; set; }
+        public TransactionType Type { get; set; }
 
-        public required Guid UserId { get; set; }
+        public Guid UserId { get; set; }
         public User User { get; set; }
-        public required Guid CategoryId { get; set; }
+        public Guid CategoryId { get; set; }
         public Category Category { get; set; }
-        public required Guid AccountId { get; set; }
+        public Guid AccountId { get; set; }
         public Account Account { get; set; }
 
         public RecurringTransaction(string description, float amount, DateTime startDate, TransactionFrequency frequency, TransactionType type, Guid userId, Guid categoryId, Guid accountId)

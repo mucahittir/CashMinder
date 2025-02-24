@@ -10,16 +10,16 @@ namespace CashMinder.Domain.Entities
 {
     public class Transaction : EntityBase
     {
-        public required DateTime TransactionDate { get; set; } = DateTime.Now;
-        public required string Description { get; set; }
-        public required float Amount { get; set; }
-        public required TransactionType Type { get; set; } = TransactionType.Withdrawal;
+        public DateTime TransactionDate { get; set; } = DateTime.Now;
+        public string Description { get; set; }
+        public float Amount { get; set; }
+        public TransactionType Type { get; set; } = TransactionType.Withdrawal;
 
-        public required Guid CategoryId { get; set; }
+        public Guid CategoryId { get; set; }
         public Category Category { get; set; }
-        public required Guid AccountId { get; set; }
+        public Guid AccountId { get; set; }
         public Account Account { get; set; }
-        public required Guid UserId { get; set; }
+        public Guid UserId { get; set; }
         public User User { get; set; }
 
         public Transaction(DateTime transactionDate, string description, float amount, TransactionType type, Guid categoryId,Guid accountId,Guid userId)

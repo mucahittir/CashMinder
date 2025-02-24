@@ -232,6 +232,32 @@ namespace CashMinder.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "mucahit@bisiler.com",
+                            FirstName = "Mucahit",
+                            IsDeleted = false,
+                            LastName = "Tiryaki",
+                            PasswordHash = "hashed_password_1",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Username = "mucahittir"
+                        },
+                        new
+                        {
+                            Id = new Guid("e75e1e79-eb5d-42c4-b28a-01eebf7b9554"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "john@example.com",
+                            FirstName = "John",
+                            IsDeleted = false,
+                            LastName = "Doe",
+                            PasswordHash = "hashed_password_1",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Username = "johndoe"
+                        });
                 });
 
             modelBuilder.Entity("CashMinder.Domain.Entities.Account", b =>

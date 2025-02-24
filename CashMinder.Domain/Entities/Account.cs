@@ -11,11 +11,11 @@ namespace CashMinder.Domain.Entities
     public class Account : EntityBase
     {
 
-        public required string Name { get; set; }
-        public required float Balance { get; set; } = 0;
-        public required AccountType Type { get; set; }
-        public required Currency Currency { get; set; }
-        public required Guid UserId { get; set; }
+        public string Name { get; set; }
+        public float Balance { get; set; } = 0;
+        public AccountType Type { get; set; }
+        public Currency Currency { get; set; }
+        public Guid UserId { get; set; }
         public User User { get; set; }
 
         public IEnumerable<Transaction> Transactions { get; set; }

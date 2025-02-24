@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace CashMinder.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -154,6 +156,15 @@ namespace CashMinder.Persistence.Migrations
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "CreatedAt", "Email", "FirstName", "IsDeleted", "LastName", "PasswordHash", "UpdatedAt", "Username" },
+                values: new object[,]
+                {
+                    { new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "mucahit@bisiler.com", "Mucahit", false, "Tiryaki", "hashed_password_1", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "mucahittir" },
+                    { new Guid("e75e1e79-eb5d-42c4-b28a-01eebf7b9554"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "john@example.com", "John", false, "Doe", "hashed_password_1", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "johndoe" }
                 });
 
             migrationBuilder.CreateIndex(

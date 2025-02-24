@@ -9,11 +9,11 @@ namespace CashMinder.Domain.Entities
 {
     public class User : EntityBase
     {
-        public required string Username { get; set; }
-        public required string FirstName { get; set; }
-        public required string LastName { get; set; }
-        public required string Email { get; set; }
-        public required string PasswordHash { get; set; }
+        public string Username { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string PasswordHash { get; set; }
 
         public IEnumerable<Account> Accounts { get; set; }
         public IEnumerable<Category> Categories { get; set; }

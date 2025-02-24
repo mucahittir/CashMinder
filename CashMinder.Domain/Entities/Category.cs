@@ -9,8 +9,8 @@ namespace CashMinder.Domain.Entities
 {
     public class Category : EntityBase
     {
-        public required string Name { get; set; }
-        public required Guid UserId { get; set; }
+        public string Name { get; set; }
+        public Guid UserId { get; set; }
         public User User { get; set; }
 
         public IEnumerable<Transaction> Transactions { get; set; }

@@ -21,4 +21,8 @@
     <ProjectReference Include="..\CashMinder.Domain\CashMinder.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
