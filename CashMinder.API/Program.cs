@@ -1,6 +1,6 @@
 using CashMinder.Persistence;
 using CashMinder.Application;
-
+using CashMinder.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +19,7 @@ builder.Configuration.SetBasePath(env.ContentRootPath)
 
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.AddMapper();
 
 var app = builder.Build();
 
