@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CashMinder.Application.Interfaces.Repositories;
+﻿using CashMinder.Application.Interfaces.Repositories;
 using CashMinder.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,4 +1,6 @@
 using CashMinder.Persistence;
+using CashMinder.Application;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,7 @@ builder.Configuration.SetBasePath(env.ContentRootPath)
     .AddEnvironmentVariables();
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

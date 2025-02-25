@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CashMinder.Domain.Common;
+﻿using CashMinder.Domain.Common;
 using CashMinder.Domain.Enums;
 
 namespace CashMinder.Domain.Entities
@@ -33,6 +28,10 @@ namespace CashMinder.Domain.Entities
             UserId = userId;
             CategoryId = categoryId;
             AccountId = accountId;
+        }
+        public RecurringTransaction()
+        {
+            
         }
     }
 }

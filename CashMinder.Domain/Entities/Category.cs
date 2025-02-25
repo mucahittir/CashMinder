@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CashMinder.Domain.Common;
+﻿using CashMinder.Domain.Common;
 
 namespace CashMinder.Domain.Entities
 {
@@ -15,10 +10,14 @@ namespace CashMinder.Domain.Entities
 
         public IEnumerable<Transaction> Transactions { get; set; }
         public IEnumerable<RecurringTransaction> RecurringTransactions { get; set; }
+
         public Category(string name, Guid userId)
         {
             Name = name;
             UserId = userId;
+        }
+        public Category()
+        {
         }
     }
 }
