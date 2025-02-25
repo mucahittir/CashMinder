@@ -15,7 +15,7 @@ namespace CashMinder.Persistence.Repositories
             
         }
 
-        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? predicate = null,
+        public async Task<IList<T>> GetAllAsync(Expression<Func<T, bool>>? predicate = null,
                                                Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
                                                Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
                                                bool enableTracking = false)
@@ -30,7 +30,7 @@ namespace CashMinder.Persistence.Repositories
                 return await orderBy(queryable).ToListAsync();
             return await queryable.ToListAsync();
         }
-        public async Task<List<T>> GetAllByPagingAsync(Expression<Func<T, bool>>? predicate = null,
+        public async Task<IList<T>> GetAllByPagingAsync(Expression<Func<T, bool>>? predicate = null,
                                                  Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
                                                  Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
                                                  bool enableTracking = false,

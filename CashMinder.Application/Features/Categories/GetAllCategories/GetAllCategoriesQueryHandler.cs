@@ -1,7 +1,9 @@
-﻿using CashMinder.Application.Interfaces.AutoMapper;
+﻿using CashMinder.Application.DTOs;
+using CashMinder.Application.Interfaces.AutoMapper;
 using CashMinder.Application.Interfaces.UnitOfWorks;
 using CashMinder.Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace CashMinder.Application.Features.Categories.GetAllCategories
 {
@@ -17,7 +19,8 @@ namespace CashMinder.Application.Features.Categories.GetAllCategories
         }
         public async Task<IList<GetAllCategoriesQueryResponse>> Handle(GetAllCategoriesQueryRequest request, CancellationToken cancellationToken)
         {
-            IList<Category> categories = await unitOfWork.GetReadRepository<Category>().GetAllAsync();
+            IList<Category> categories = await unitOfWork.GetReadRepository<Category>().GetAllAsync(include: x => x.Include(u => u.User));
+            UserDto user = mapper.Map<UserDto, User>(new User());
             var map = mapper.Map<GetAllCategoriesQueryResponse, Category>(categories);
             return map;
         }
