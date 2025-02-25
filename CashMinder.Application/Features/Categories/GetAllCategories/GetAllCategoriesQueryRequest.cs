@@ -2,7 +2,7 @@
 
 namespace CashMinder.Application.Features.Categories.GetAllCategories
 {
-    public class GetAllCategoriesQueryRequest : IRequest<List<GetAllCategoriesQueryResponse>>
+    public class GetAllCategoriesQueryRequest : IRequest<IList<GetAllCategoriesQueryResponse>>
     {
     }
 }

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CashMinder.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250224111826_Initial")]
-    partial class Initial
+    [Migration("20250225213036_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -92,6 +92,53 @@ namespace CashMinder.Persistence.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a1b2c3d4-1234-5678-9101-111213141516"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Eğlence",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96")
+                        },
+                        new
+                        {
+                            Id = new Guid("b2c3d4e5-2345-6789-1011-121314151617"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Market",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96")
+                        },
+                        new
+                        {
+                            Id = new Guid("c3d4e5f6-3456-7891-0111-213141516171"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Sağlık",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96")
+                        },
+                        new
+                        {
+                            Id = new Guid("c3d4e5f6-3456-7891-0111-213141516132"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Ulaşım",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96")
+                        },
+                        new
+                        {
+                            Id = new Guid("c3d4e5f6-3456-7891-0111-213141516103"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Diğer",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96")
+                        });
                 });
 
             modelBuilder.Entity("CashMinder.Domain.Entities.RecurringTransaction", b =>

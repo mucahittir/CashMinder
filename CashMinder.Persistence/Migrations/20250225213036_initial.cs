@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CashMinder.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -165,6 +165,18 @@ namespace CashMinder.Persistence.Migrations
                 {
                     { new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "mucahit@bisiler.com", "Mucahit", false, "Tiryaki", "hashed_password_1", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "mucahittir" },
                     { new Guid("e75e1e79-eb5d-42c4-b28a-01eebf7b9554"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "john@example.com", "John", false, "Doe", "hashed_password_1", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "johndoe" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "CreatedAt", "IsDeleted", "Name", "UpdatedAt", "UserId" },
+                values: new object[,]
+                {
+                    { new Guid("a1b2c3d4-1234-5678-9101-111213141516"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Eğlence", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96") },
+                    { new Guid("b2c3d4e5-2345-6789-1011-121314151617"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Market", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96") },
+                    { new Guid("c3d4e5f6-3456-7891-0111-213141516103"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Diğer", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96") },
+                    { new Guid("c3d4e5f6-3456-7891-0111-213141516132"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Ulaşım", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96") },
+                    { new Guid("c3d4e5f6-3456-7891-0111-213141516171"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Sağlık", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("50bb81ad-3b50-4b57-a677-080058ef5d96") }
                 });
 
             migrationBuilder.CreateIndex(
