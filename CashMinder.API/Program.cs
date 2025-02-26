@@ -1,6 +1,7 @@
 using CashMinder.Persistence;
 using CashMinder.Application;
 using CashMinder.Mapper;
+using CashMinder.Application.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.ConfigureExceptionHandlingMiddleware();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
