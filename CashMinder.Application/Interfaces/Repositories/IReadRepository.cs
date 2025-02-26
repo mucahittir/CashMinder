@@ -19,7 +19,7 @@ namespace CashMinder.Application.Interfaces.Repositories
             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
             bool enableTracking = false, int currentPage = 1, int pageSize = 10
             );
-        Task<T> GetAsync(
+        Task<T?> GetAsync(
             Expression<Func<T, bool>> predicate,
             Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
             bool enableTracking = false
