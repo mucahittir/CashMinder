@@ -35,8 +35,8 @@ namespace CashMinder.Application.Exceptions
 
             List<string> errors = new()
             {
-                $"Exception: {ex.Message}",
-                $"InnerException: {ex.InnerException}"
+                $"Exception : {ex.Message}",
+                $"InnerException : {(ex.InnerException != null ? ex.InnerException : "null")}"
             };
 
             return httpContext.Response.WriteAsync(new ExceptionModel
