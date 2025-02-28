@@ -1,31 +1,17 @@
-﻿using CashMinder.Domain.Common;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace CashMinder.Domain.Entities
 {
-    public class User : EntityBase
+    public class User : IdentityUser<Guid>
     {
-        public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime? RefreshTokenExpiryTime { get; set; }
 
         public IEnumerable<Account> Accounts { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         public IEnumerable<Transaction> Transactions { get; set; }
         public IEnumerable<RecurringTransaction> RecurringTransactions { get; set; }
-
-        public User(string username, string firstName, string lastName, string email, string passwordHash)
-        {
-            Username = username;
-            FirstName = firstName;
-            LastName = lastName;
-            Email = email;
-            PasswordHash = passwordHash;
-        }
-        public User()
-        {
-
-        }
     }
 }
