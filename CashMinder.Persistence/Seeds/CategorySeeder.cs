@@ -15,12 +15,12 @@ namespace CashMinder.Persistence.Seeds
             {
                 List<Category> categories = new List<Category>
                 {
-                    new() {Id = Guid.NewGuid(),Name = "Eğlence",UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(),Name = "Market",UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(),Name = "Sağlık",UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(),Name = "Kira",UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(),Name = "Ulaşım",UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(),Name = "Diğer",UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
+                    new() {Id = Guid.NewGuid(),Name = "Eğlence",UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(),Name = "Market",UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(),Name = "Sağlık",UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(),Name = "Kira",UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(),Name = "Ulaşım",UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(),Name = "Diğer",UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
                 };
                 context.Set<Category>().AddRange(categories);
                 context.SaveChanges();
@@ -34,12 +34,12 @@ namespace CashMinder.Persistence.Seeds
             {
                 List<Category> categories = new List<Category>
                 {
-                    new() {Id = Guid.NewGuid(), Name = "Eğlence", UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(), Name = "Market", UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(), Name = "Sağlık", UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(), Name = "Kira", UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(), Name = "Ulaşım", UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
-                    new() {Id = Guid.NewGuid(), Name = "Diğer", UserId = user.Id, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now},
+                    new() {Id = Guid.NewGuid(), Name = "Eğlence", UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(), Name = "Market", UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(), Name = "Sağlık", UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(), Name = "Kira", UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(), Name = "Ulaşım", UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
+                    new() {Id = Guid.NewGuid(), Name = "Diğer", UserId = user.Id, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow},
                 };
                 context.Set<Category>().AddRange(categories);
                 await context.SaveChangesAsync();
