@@ -1,5 +1,6 @@
 using CashMinder.Persistence;
 using CashMinder.Application;
+using CashMinder.Infrastructure;
 using CashMinder.Mapper;
 using CashMinder.Application.Exceptions;
 
@@ -20,6 +21,7 @@ builder.Configuration.SetBasePath(env.ContentRootPath)
 
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddMapper();
 
 var app = builder.Build();

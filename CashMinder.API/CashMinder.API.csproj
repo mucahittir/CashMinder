@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CashMinder.Mapper\CashMinder.Mapper.csproj" />
     <ProjectReference Include="..\CashMinder.Persistence\CashMinder.Persistence.csproj" />
+    <ProjectReference Include="..\CashMinder.Infrastructure\CashMinder.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
