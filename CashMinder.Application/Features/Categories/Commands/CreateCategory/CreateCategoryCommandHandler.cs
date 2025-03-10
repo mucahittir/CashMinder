@@ -1,11 +1,8 @@
-﻿
-using System.ComponentModel.DataAnnotations;
-using CashMinder.Application.Features.Categories.Rules;
+﻿using CashMinder.Application.Features.Categories.Rules;
 using CashMinder.Application.Interfaces.UnitOfWorks;
 using CashMinder.Domain.Entities;
 using FluentValidation;
 using MediatR;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace CashMinder.Application.Features.Categories.Commands.CreateCategory
 {

@@ -7,7 +7,7 @@ using CashMinder.Application.Bases;
 
 namespace CashMinder.Application.Features.Categories.Exceptions
 {
-    public class CategoryNameShouldBeUniqueException : BaseExceptions
+    public class CategoryNameShouldBeUniqueException : BaseException
     {
         public CategoryNameShouldBeUniqueException(): base("Category name is already exist."){ }
     }
