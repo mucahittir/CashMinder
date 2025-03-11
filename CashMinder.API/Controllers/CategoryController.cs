@@ -4,6 +4,7 @@ using CashMinder.Application.Features.Categories.Commands.UpdateCategory;
 using CashMinder.Application.Features.Categories.Queries.GetAllCategories;
 using CashMinder.Application.Features.Categories.Queries.GetCategory;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CashMinder.API.Controllers
@@ -19,6 +20,7 @@ namespace CashMinder.API.Controllers
             this.mediator = mediator;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -26,6 +28,8 @@ namespace CashMinder.API.Controllers
             return Ok(response);
         }
 
+
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {
@@ -33,6 +37,8 @@ namespace CashMinder.API.Controllers
             return Ok(response);
         }
 
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(CreateCategoryCommandRequest request)
         {
@@ -40,6 +46,8 @@ namespace CashMinder.API.Controllers
             return Ok();
         }
 
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Update(UpdateCategoryCommandRequest request)
         {
@@ -47,6 +55,8 @@ namespace CashMinder.API.Controllers
             return Ok();
         }
 
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Delete(DeleteCategoryCommandRequest request)
         {

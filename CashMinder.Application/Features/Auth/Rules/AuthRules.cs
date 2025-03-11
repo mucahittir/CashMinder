@@ -14,5 +14,23 @@ namespace CashMinder.Application.Features.Auth.Rules
             }
             return Task.CompletedTask;
         }
+
+        public Task UserShouldExist(User? user)
+        {
+            if (user == null)
+            {
+                throw new UserNotFoundException();
+            }
+            return Task.CompletedTask;
+        }
+
+        public Task PasswordShouldBeValid(bool passwordValid)
+        {
+            if (!passwordValid)
+            {
+                throw new InvalidPasswordException();
+            }
+            return Task.CompletedTask;
+        }
     }
 }

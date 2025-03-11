@@ -1,5 +1,3 @@
-using System.Security.Claims;
-using CashMinder.Application.Bases;
 using CashMinder.Application.Features.Auth.Rules;
 using CashMinder.Application.Interfaces.AutoMapper;
 using CashMinder.Application.Interfaces.UnitOfWorks;
@@ -19,20 +17,14 @@ namespace CashMinder.Application.Features.Auth.Commands.Register
         private readonly IMapper mapper;
         
         private readonly IValidator<RegisterCommandRequest> validator;
-        private readonly IUnitOfWork unitOfWork;
-        private readonly IHttpContextAccessor httpContextAccessor;
-        private readonly string userId;
 
-        public RegisterCommandHandler(AuthRules authRules, UserManager<User> userManager, RoleManager<Role> roleManager, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IValidator<RegisterCommandRequest> validator) : base()
+        public RegisterCommandHandler(AuthRules authRules, UserManager<User> userManager, RoleManager<Role> roleManager, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IValidator<RegisterCommandRequest> validator)
         {
             this.authRules = authRules;
             this.userManager = userManager;
             this.roleManager = roleManager;
             this.validator = validator;
             this.mapper = mapper;
-            this.unitOfWork = unitOfWork;
-            this.httpContextAccessor = httpContextAccessor;
-            userId = httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
         }
         public async Task<Unit> Handle(RegisterCommandRequest request, CancellationToken cancellationToken)
         {
