@@ -20,7 +20,7 @@ namespace CashMinder.Application.Features.Auth.Commands.Login
         private readonly UserManager<User> userManager;
         private IValidator<LoginCommandRequest> validator;
 
-        public LoginCommandHandler(AuthRules authRules, ITokenService tokenService, IConfiguration configuration, UserManager<User> userManager, RoleManager<Role> roleManager, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IValidator<LoginCommandRequest> validator)
+        public LoginCommandHandler(AuthRules authRules, ITokenService tokenService, IConfiguration configuration, UserManager<User> userManager, IValidator<LoginCommandRequest> validator)
         {
             this.authRules = authRules;
             this.tokenService = tokenService;

@@ -41,5 +41,14 @@ namespace CashMinder.Application.Features.Auth.Rules
             }
             return Task.CompletedTask;
         }
+
+        public Task EmailAddressShouldBeValid(User? user)
+        {
+            if(user == null)
+            {
+                throw new EmailAddressNotValidException();
+            }
+            return Task.CompletedTask;
+        }
     }
 }
