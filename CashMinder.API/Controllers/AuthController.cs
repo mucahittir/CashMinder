@@ -1,4 +1,5 @@
 using CashMinder.Application.Features.Auth.Commands.Login;
+using CashMinder.Application.Features.Auth.Commands.RefreshToken;
 using CashMinder.Application.Features.Auth.Commands.Register;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,13 @@ namespace CashMinder.API.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RefreshToken(RefreshTokenCommandRequest request)
         {
             var response = await mediator.Send(request);
             return Ok(response);

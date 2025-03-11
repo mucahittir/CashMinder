@@ -32,5 +32,14 @@ namespace CashMinder.Application.Features.Auth.Rules
             }
             return Task.CompletedTask;
         }
+
+        public Task RefreshTokenShouldNotBeExpired(DateTime? refreshTokenExpiryTime)
+        {
+            if (refreshTokenExpiryTime <= DateTime.UtcNow)
+            {
+                throw new RefreshTokenExpiredException();
+            }
+            return Task.CompletedTask;
+        }
     }
 }
