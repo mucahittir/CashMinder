@@ -1,3 +1,4 @@
+using CashMinder.Application.Bases;
 using CashMinder.Application.Features.Auth.Rules;
 using CashMinder.Application.Interfaces.AutoMapper;
 using CashMinder.Application.Interfaces.UnitOfWorks;
@@ -9,22 +10,20 @@ using Microsoft.AspNetCore.Identity;
 
 namespace CashMinder.Application.Features.Auth.Commands.Register
 {
-    public class RegisterCommandHandler : IRequestHandler<RegisterCommandRequest, Unit>
+    public class RegisterCommandHandler : BaseHandler, IRequestHandler<RegisterCommandRequest, Unit>
     {
         private readonly AuthRules authRules;
         private readonly UserManager<User> userManager;
         private readonly RoleManager<Role> roleManager;
-        private readonly IMapper mapper;
         
         private readonly IValidator<RegisterCommandRequest> validator;
 
-        public RegisterCommandHandler(AuthRules authRules, UserManager<User> userManager, RoleManager<Role> roleManager, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IValidator<RegisterCommandRequest> validator)
+        public RegisterCommandHandler(AuthRules authRules, UserManager<User> userManager, RoleManager<Role> roleManager, IMapper mapper, IValidator<RegisterCommandRequest> validator) : base(mapper,null, null)
         {
             this.authRules = authRules;
             this.userManager = userManager;
             this.roleManager = roleManager;
             this.validator = validator;
-            this.mapper = mapper;
         }
         public async Task<Unit> Handle(RegisterCommandRequest request, CancellationToken cancellationToken)
         {

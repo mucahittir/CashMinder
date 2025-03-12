@@ -1,4 +1,5 @@
-﻿using CashMinder.Application.DTOs;
+﻿using CashMinder.Application.Bases;
+using CashMinder.Application.DTOs;
 using CashMinder.Application.Features.Categories.Queries.GetAllCategories;
 using CashMinder.Application.Interfaces.AutoMapper;
 using CashMinder.Application.Interfaces.UnitOfWorks;
@@ -8,15 +9,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CashMinder.Application.Features.Categories.GetAllCategories
 {
-    public class GetAllCategoriesQueryHandler : IRequestHandler<GetAllCategoriesQueryRequest, IList<GetAllCategoriesQueryResponse>>
+    public class GetAllCategoriesQueryHandler : BaseHandler, IRequestHandler<GetAllCategoriesQueryRequest, IList<GetAllCategoriesQueryResponse>>
     {
-        private readonly IUnitOfWork unitOfWork;
-        private readonly IMapper mapper;
-
-        public GetAllCategoriesQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetAllCategoriesQueryHandler(IUnitOfWork unitOfWork, IMapper mapper): base(mapper, unitOfWork, null)
         {
-            this.unitOfWork = unitOfWork;
-            this.mapper = mapper;
         }
         public async Task<IList<GetAllCategoriesQueryResponse>> Handle(GetAllCategoriesQueryRequest request, CancellationToken cancellationToken)
         {

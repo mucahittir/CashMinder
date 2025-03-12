@@ -8,8 +8,6 @@ namespace CashMinder.Application.Features.Categories.Commands.CreateCategory
         {
             RuleFor(x => x.Name)
                 .NotEmpty();
-            RuleFor(x => x.UserId)
-                .NotEmpty();
         }
     }
 }

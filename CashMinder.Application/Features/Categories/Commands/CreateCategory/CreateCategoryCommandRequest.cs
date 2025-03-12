@@ -7,6 +7,5 @@ namespace CashMinder.Application.Features.Categories.Commands.CreateCategory
     {
 
         public string Name { get; set; }
-        public Guid UserId { get; set; }
     }
 }

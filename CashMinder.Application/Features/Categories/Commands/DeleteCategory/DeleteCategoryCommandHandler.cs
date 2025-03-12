@@ -1,18 +1,17 @@
-﻿using CashMinder.Application.Interfaces.UnitOfWorks;
+﻿using CashMinder.Application.Bases;
+using CashMinder.Application.Interfaces.UnitOfWorks;
 using CashMinder.Domain.Entities;
 using FluentValidation;
 using MediatR;
 
 namespace CashMinder.Application.Features.Categories.Commands.DeleteCategory
 {
-    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommandRequest, Unit>
+    public class DeleteCategoryCommandHandler : BaseHandler, IRequestHandler<DeleteCategoryCommandRequest, Unit>
     {
-        private readonly IUnitOfWork unitOfWork;
         private readonly IValidator<DeleteCategoryCommandRequest> validator;
 
-        public DeleteCategoryCommandHandler(IUnitOfWork unitOfWork, IValidator<DeleteCategoryCommandRequest> validator)
+        public DeleteCategoryCommandHandler(IUnitOfWork unitOfWork, IValidator<DeleteCategoryCommandRequest> validator): base(null, unitOfWork, null)
         {
-            this.unitOfWork = unitOfWork;
             this.validator = validator;
         }
         public async Task<Unit> Handle(DeleteCategoryCommandRequest request, CancellationToken cancellationToken)
