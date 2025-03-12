@@ -11,5 +11,11 @@ namespace CashMinder.Application.Features.Accounts.Rules
             if(accounts.Any(x => x.Name == requestName)) throw new AccountNameShouldBeUniqueException();
             return Task.CompletedTask;
         }
+
+        public Task AccountShouldExist(Account account)
+        {
+            if(account == null) throw new AccountDoesNotExistException();
+            return Task.CompletedTask;
+        }
     }
 }
