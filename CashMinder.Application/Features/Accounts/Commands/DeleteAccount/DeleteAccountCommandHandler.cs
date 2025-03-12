@@ -26,6 +26,7 @@ namespace CashMinder.Application.Features.Accounts.Commands.DeleteAccount
             var account = await unitOfWork.GetReadRepository<Account>().GetAsync(x => x.Id == request.Id && x.IsDeleted == false);
             await accountRules.AccountShouldExist(account);
             account.IsDeleted = true;
+            account.UpdatedAt = DateTime.UtcNow;
             await unitOfWork.GetWriteRepository<Account>().UpdateAsync(account);
             await unitOfWork.SaveAsync();
             return Unit.Value;

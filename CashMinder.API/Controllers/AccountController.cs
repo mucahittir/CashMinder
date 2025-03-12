@@ -1,5 +1,6 @@
 using CashMinder.Application.Features.Accounts.Commands.CreateAccount;
 using CashMinder.Application.Features.Accounts.Commands.DeleteAccount;
+using CashMinder.Application.Features.Accounts.Commands.UpdateAccount;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,14 @@ namespace CashMinder.API.Controllers
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(CreateAccountCommandRequest request)
+        {
+            await mediator.Send(request);
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Update(UpdateAccountCommandRequest request)
         {
             await mediator.Send(request);
             return Ok();

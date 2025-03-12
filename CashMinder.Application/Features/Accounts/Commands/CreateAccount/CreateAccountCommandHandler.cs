@@ -27,6 +27,8 @@ namespace CashMinder.Application.Features.Accounts.Commands.CreateAccount
             await accountRules.AccountNameShouldBeUnique(request.Name, accounts);
             var map = mapper.Map<Account, CreateAccountCommandRequest>(request);
             map.UserId = new Guid(userId);
+            map.CreatedAt = DateTime.UtcNow;
+            map.UpdatedAt = DateTime.UtcNow;
             await unitOfWork.GetWriteRepository<Account>().AddAsync(map);
             await unitOfWork.SaveAsync();
             return Unit.Value;
